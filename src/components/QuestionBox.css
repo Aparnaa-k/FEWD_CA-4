@@ -1,0 +1,116 @@
+*{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.navbar{
+    height: 10vh;
+    margin-top: -10px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0px;
+}
+.logo{
+    padding: 5px 15px 0px;
+}
+
+h1{
+    padding: 25px;
+}
+.question-box{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.heading{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.question-div{
+    width: 100%;
+    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+}
+svg{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+#question-text{
+    align-items: center;
+}
+.theme-change{
+    text-align:center;
+    margin: 10px 20px 0px;
+
+}
+
+button{
+    background-color: rgb(255, 255, 255);
+    width: 30vw;
+    height: 8vh;
+    border: none;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    align-items: center;
+    padding: 10px;
+}
+.options{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.option-button{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    margin-top: 60px;
+    width: 35%;
+}
+.submit{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 60px 40%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+.option-button:hover{
+    background-color: #D2B48C;
+}
+.submit:hover{
+    font-weight: 700;
+}
+svg:hover{
+    transform: scale(1.3);
+}
+
+.dark-theme nav{
+  background-color: #000000 ;
+  color: rgb(255, 255, 255);
+}
+
+body .dark-theme{
+  background-color: #000000 ;
+  color: #ffffff;
+}
+
+.dark-theme nav{
+  background-color: #f5deb3 ;
+  color: black;
+}
+
+body .light-theme{
+  background-color: #f5deb3 ;
+  color: black; 
+}
