@@ -43,6 +43,7 @@ svg{
     width: 30px;
     height: 30px;
     cursor: pointer;
+    /* position: relative; */
 }
 #question-text{
     align-items: center;
@@ -113,4 +114,32 @@ body .dark-theme{
 body .light-theme{
   background-color: #f5deb3 ;
   color: black; 
+}
+ .light-theme .highlights >button{
+    background-color: #000000;
+    color: rgb(255, 255, 255); 
+    width: 15vw;
+}
+
+.dark-theme .highlights  >button{
+    background-color: #f5deb3;
+    color: #000000;
+    width: 15vw;
+}
+.highlight-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.highlights{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.option{
+    align-items: center;
+    width: 55%;
 }

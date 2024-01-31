@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./QuestionBox.css";
 import { useTheme } from "../components/ThemeProvider";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
@@ -10,15 +10,16 @@ import questions from "../questions.js";
 export default function QuestionBox() {
   const { theme, toggleTheme } = useTheme();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [score, setScore] = useState(1);
   const currentQuestion = questions[currentQuestionIndex];
 
+  const scoreRef = useRef(0);
+
   const handleNextQuestion = () => {
-    if (currentQuestionIndex < questions.length-1) {
+    if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
       window.location = "Result.jsx";
-      localStorage.setItem("quizScore", score);
+      localStorage.setItem("quizScore", scoreRef.current);
     }
   };
 
@@ -30,14 +31,30 @@ export default function QuestionBox() {
 
   const handleAnswerClick = (isCorrect) => {
     if (isCorrect) {
-      setScore(score + 1);
-      console.log(score);
+      scoreRef.current += 1;
+      console.log(scoreRef.current);
     }
     handleNextQuestion();
   };
 
+  const highlight = () => {
+    const questionElement = document.getElementById("question-text");
+    if (questionElement) {
+      questionElement.style.color = "#ff0000";
+
+    }
+  };
+
+  const removeHighlight = () => {
+    const questionElement = document.getElementById("question-text");
+    if (questionElement) {
+      questionElement.style.color = "#0000ff" ;
+
+    }
+  };
+
   return (
-    <div className={`question-box ${theme}-theme`} >
+    <div className={`question-box ${theme}-theme`}>
       <nav className="navbar">
         <h1 className="logo">QUIZ WORLD</h1>
         <div className="theme-change" onClick={toggleTheme}>
@@ -64,7 +81,12 @@ export default function QuestionBox() {
           </button>
         ))}
       </div>
+      <div className="highlight-bar">
+        <div className="option highlights">
+          <button onClick={highlight}>Hightlight</button>
+          <button onClick={removeHighlight}>Remove Highlight</button>
+        </div>
+      </div>
     </div>
   );
 }
-
